@@ -27,8 +27,8 @@ export default {
     const text1 = "The only 3 things that you can control are your";
     const words = {
       thoughts: "thoughts,",
-      feelings: "feelings,",
-      actions: "& actions."
+      feelings: " feelings,",
+      actions: " & actions."
     };
 
     const typingText = document.getElementById("typing-text");
