@@ -46,54 +46,55 @@
 
       <div class="contact-form">
         <h3>What is your feedback on my website?</h3>
-        <form id="feedbackForm">
+        <form @submit.prevent="submitFeedback">
           <textarea 
             v-model="feedbackMessage" 
             placeholder="Type your message here..." 
             required
           ></textarea>
-          <button type="submit" :disabled="isSending">
-            {{ isSending ? 'Sending...' : 'Sent Feedback' }}
+          <button type="submit">
+            Send Feedback
           </button>
         </form>
-        <p v-if="feedbackResponse" class="feedback-message">
-          {{ feedbackResponse }}
+        <p v-if="feedbackSent">
+          Thank you for your feedback!
         </p>
       </div>
     </div>
   </section>
 </template>
 
-<script setup>
-import { ref } from 'vue'
-import { supabase } from '../lib/supabaseClient.js' // 👈 adjust path if needed
+<script>
+import { supabase } from '../lib/supabaseClient.js';
 
-const feedbackMessage = ref('')
-const feedbackResponse = ref('')
-const isSending = ref(false)
+export default {
+  name: "Contact",
+  data() {
+    return {
+      feedbackMessage: '',
+      feedbackSent: false
+    };
+  },
+  methods: {
+    async submitFeedback() {
+      if (!this.feedbackMessage.trim()) return;
 
-async function sendFeedback() {
-  if (!feedbackMessage.value.trim()) {
-    feedbackResponse.value = 'Please enter a message before sending.'
-    return
+      const { error } = await supabase
+        .from('feedback') // <-- your table name in Supabase
+        .insert([{ message: this.feedbackMessage }]);
+
+      if (error) {
+        console.error('Error submitting feedback:', error.message);
+        alert('There was an error sending your feedback.');
+        return;
+      }
+
+      this.feedbackSent = true;
+      this.feedbackMessage = '';
+
+      // Hide thank you message after 3 seconds
+      setTimeout(() => (this.feedbackSent = false), 3000);
+    }
   }
-
-  isSending.value = true
-  feedbackResponse.value = ''
-
-  const { error } = await supabase
-    .from('feedback')
-    .insert([{ message: feedbackMessage.value.trim() }])
-
-  if (error) {
-    console.error(error)
-    feedbackResponse.value = 'Something went wrong. Please try again.'
-  } else {
-    feedbackResponse.value = 'Thank you for your feedback!'
-    feedbackMessage.value = ''
-  }
-
-  isSending.value = false
-  setTimeout(() => (feedbackResponse.value = ''), 3000)
-}
+};
 </script>
