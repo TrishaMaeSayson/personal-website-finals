@@ -18,9 +18,9 @@
       </div>
 
       <div class="education-photos">
-        <div class="photo-square square1"><img src="images/matyo.jpg" alt="Matyo" /></div>
-        <div class="photo-square square2"><img src="images/ceu.jpg" alt="CEU" /></div>
-        <div class="photo-square square3"><img src="images/apc.jpg" alt="APC" /></div>
+        <div class="photo-square square1"><img src="/trisha-website/public/images/matyo.jpg" alt="Matyo" /></div>
+        <div class="photo-square square2"><img src="/trisha-website/public/images/ceu.jpg" alt="CEU" /></div>
+        <div class="photo-square square3"><img src="/trisha-website/public/images/apc.jpg" alt="APC" /></div>
       </div>
     </div>
   </section>

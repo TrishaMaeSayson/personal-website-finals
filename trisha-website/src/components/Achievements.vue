@@ -11,11 +11,11 @@
       </div>
     </div>
     <div class="achievement-photos">
-      <div class="photo-square"><img src="images/laude.jpg" alt="Laude" /></div>
-      <div class="photo-square"><img src="images/Edukcircle.jpg" alt="EdukCircle" /></div>
-      <div class="photo-square"><img src="images/license.png" alt="License" /></div>
-      <div class="photo-square"><img src="images/data.png" alt="Data" /></div>
-      <div class="photo-square"><img src="images/web.png" alt="IBM" /></div>
+      <div class="photo-square"><img src="/trisha-website/public/images/laude.jpg" alt="Laude" /></div>
+      <div class="photo-square"><img src="/trisha-website/public/images/Edukcircle.jpg" alt="EdukCircle" /></div>
+      <div class="photo-square"><img src="/trisha-website/public/images/license.png" alt="License" /></div>
+      <div class="photo-square"><img src="/trisha-website/public/images/data.png" alt="Data" /></div>
+      <div class="photo-square"><img src="/trisha-website/public/images/web.png" alt="IBM" /></div>
     </div>
   </section>
 </template>

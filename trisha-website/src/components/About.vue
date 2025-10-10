@@ -20,16 +20,16 @@
         </div>
 
         <div class="about-links">
-          <a href="https://myanimelist.net/profile/Psysonsy" target="_blank"><img src="images/MAL.png" alt="MAL" /></a>
-          <a href="https://www.deviantart.com/yellow-sonsy" target="_blank"><img src="images/deviant.png" alt="DeviantArt" /></a>
-          <a href="https://archiveofourown.org/users/Psysonsy/profile" target="_blank"><img src="images/A03.png" alt="AO3" /></a>
+          <a href="https://myanimelist.net/profile/Psysonsy" target="_blank"><img src="/trisha-website/public/images/MAL.png" alt="MAL" /></a>
+          <a href="https://www.deviantart.com/yellow-sonsy" target="_blank"><img src="/trisha-website/public/images/deviant.png" alt="DeviantArt" /></a>
+          <a href="https://archiveofourown.org/users/Psysonsy/profile" target="_blank"><img src="/trisha-website/public/images/A03.png" alt="AO3" /></a>
         </div>
       </div>
 
       <div class="about-right">
         <div class="music-container">
           <div class="music-art">
-            <img src="images/drawing.jpg" class="drawing" alt="Sketch" />
+            <img src="/trisha-website/public/images/drawing.jpg" class="drawing" alt="Sketch" />
           </div>
           <div class="music-controls">
             <button id="aboutPlayBtn" class="play-btn"><i class="fas fa-play"></i></button>
@@ -37,7 +37,7 @@
               <span></span><span></span><span></span><span></span><span></span>
             </div>
           </div>
-          <audio id="piano" src="music.ogg" preload="metadata"></audio>
+          <audio id="piano" src="/trisha-website/public/music.ogg" preload="metadata"></audio>
         </div>
       </div>
     </div>
