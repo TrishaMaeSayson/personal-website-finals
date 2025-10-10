@@ -66,7 +66,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import { supabase } from '../supabase' // 👈 adjust path if needed
+import { supabase } from '../supabaseClient.js' // 👈 adjust path if needed
 
 const feedbackMessage = ref('')
 const feedbackResponse = ref('')
