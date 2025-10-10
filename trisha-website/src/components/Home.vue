@@ -15,7 +15,7 @@
         <div class="rect rect2"></div>
         <div class="rect rect3"></div>
       </div>
-      <img src="/trisha-website/public/images/selfie.jpg" class="profile-pic" alt="Profile" />
+      <img src="/images/selfie.jpg" class="profile-pic" alt="Profile" />
     </div>
   </section>
 </template>

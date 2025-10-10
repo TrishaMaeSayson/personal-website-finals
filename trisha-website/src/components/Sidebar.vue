@@ -1,6 +1,6 @@
 <template>
   <div class="profile-section text-center w-100 py-4">
-    <img src="/trisha-website/public/images/selfie.jpg" class="profile-pic mb-2" alt="Profile" />
+    <img src="/images/selfie.jpg" class="profile-pic mb-2" alt="Profile" />
     <h1>TreseMe</h1>
 
     <ul class="nav flex-column mt-4">
