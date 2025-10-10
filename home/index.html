@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Trisha's Profile Website</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/61607d9931.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row g-0">
+      <!-- Sidebar -->
+      <div class="col-md-2">
+        <div class="profile-section text-center w-100 py-4">
+          <img src="images/selfie.jpg" class="profile-pic mb-2" alt="Profile">
+          <h1>TreseMe</h1>
+        </div>
+        <ul class="nav flex-column">
+          <li class="nav-item"><a href="#home" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+          <li class="nav-item"><a href="#about" class="nav-link"><i class="fas fa-user"></i> About</a></li>
+          <li class="nav-item"><a href="#school" class="nav-link"><i class="fas fa-graduation-cap"></i> Education</a></li>
+          <li class="nav-item"><a href="#achievement" class="nav-link"><i class="fas fa-award"></i> Achievements</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+          <li class="nav-item"><a href="#resources" class="nav-link"><i class="fas fa-book"></i> Resources</a></li>
+        </ul>
+      </div>
+      
+      <!-- Main content -->
+      <div class="col-md-10 p-4">
+        <div class="row">
+          <div class="col-2"></div>
+
+          <div class="col-8">
+            <!-- Home -->
+            <div id="home" class="content-section active">
+              <div class="home-text text-start">
+                <h2>Hi, I'm <span class="highlight-name">Trish</span></h2>
+                <p id="typing-text">
+                  The only 3 things that you can control are your <br>
+                  <span id="thoughts" class="word-thoughts"></span>
+                  <span id="feelings" class="word-feelings"></span>
+                  <span id="actions" class="word-actions"></span>
+                </p>
+              </div>
+              <div class="photo-frame">
+                <div class="photo-background">
+                    <div class="rect rect1"></div>
+                    <div class="rect rect2"></div>
+                    <div class="rect rect3"></div>
+                </div>
+                <img src="images/selfie.jpg" class="profile-pic" alt="Profile">
+              </div>
+            </div>
+
+            <!-- About -->
+            <div id="about" class="content-section">
+              <h2>About Me</h2>
+              <div class="paragraph-box">
+                <p>I'm returning student from San Mateo, Rizal, currently pursuing an Associate in Computer Technology at Asia Pacific College.</p>
+                <p>I enjoy a wide range of hobbies, including playing the piano, singing, drawing both realistic portraits and anime characters, watching anime, reading manga, manhwa, and fanfiction, as well as playing badminton.</p>
+                <p>I’m proud of being self-aware and dedicated to personal growth. My goal is to further discover different aspects of myself while working toward a future role in the field of data.</p>
+                <p>This website is part of my WEBPROG course requirement.</p>
+              </div>
+
+              <div class="about-content">
+                <!-- LEFT SIDE: Table + Links -->
+                <div class="about-left">
+                  <div class="about-info">
+                    <table>
+                      <tr>
+                        <td><strong>Full Name:</strong></td>
+                        <td>Trisha Mae Verdeflor Sayson</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Birthday:</strong></td>
+                        <td>March 10, 1999</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Age:</strong></td>
+                        <td>26</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Address:</strong></td>
+                        <td>San Mateo, Rizal</td>
+                      </tr>
+                    </table>
+                  </div>
+
+                  <div class="about-links">
+                    <a href="https://myanimelist.net/profile/Psysonsy" target="_blank" class="about-logo">
+                      <img src="images/MAL1.png" alt="MAL">
+                    </a>
+                    <a href="https://www.deviantart.com/yellow-sonsy" target="_blank" class="about-logo">
+                      <img src="images/deviant1.png" alt="DeviantArt">
+                    </a>
+                    <a href="https://archiveofourown.org/users/Psysonsy/profile" target="_blank" class="about-logo">
+                      <img src="images/A031.png" alt="ArchiveOfOurOwn">
+                    </a>
+                  </div>
+                </div>
+
+                <!-- RIGHT SIDE (future gallery + sound icon) -->
+                <div class="about-right">
+                  <div class="music-container">
+                    <div class="music-art">
+                      <img src="images/drawing.jpg" class="drawing" alt="Sketch">
+                    </div>
+
+                    <div class="music-controls" role="region" aria-label="Audio controls">
+                      <button id="aboutPlayBtn" class="play-btn" aria-pressed="false" aria-label="Play/Pause">
+                        <i class="fas fa-play" aria-hidden="true"></i>
+                      </button>
+                  
+                    <div class="music-visualizer" aria-hidden="true">
+                        <span></span><span></span><span></span><span></span><span></span>
+                        <span></span><span></span><span></span><span></span><span></span>
+                        <span></span><span></span><span></span><span></span><span></span>
+                        <span></span><span></span><span></span><span></span><span></span>
+                    </div>
+                  </div>
+
+                  <audio id="piano" src="music.ogg" preload="metadata"></audio>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+
+            <!-- School -->
+            <div id="school" class="content-section">
+              <h2>Education</h2>
+
+              <div class="education-container">
+                <!-- Left: Education Box -->
+                <div class="education-box">
+                  <div class="school-entry">
+                    <h3>St. Matthew College</h3>
+                    <p>Elementary & High School, San Mateo, Rizal<br>
+                    Last batch of the 4-year high school program.</p>
+                  </div>
+
+                  <div class="school-entry">
+                    <h3>Centro Escolar University Manila</h3>
+                    <p>B.S. Psychology, <em>Cum Laude</em><br>
+                    9 Mendiola St, San Miguel, Manila</p>
+                  </div>
+
+                  <div class="school-entry">
+                    <h3>Asia Pacific College</h3>
+                    <p>Associate in Computer Technology (Ongoing)<br>
+                    3 Humabon, Makati City<br>
+                    Aspiring Data Analyst</p>
+                  </div>
+                </div>
+
+                <!-- Right: Overlapping Photo Squares -->
+                <div class="education-photos">
+                  <div class="photo-square square1">
+                    <img src="images/matyo.jpg" alt="Matyo">
+                  </div>
+                  <div class="photo-square square2">
+                    <img src="images/ceu.jpg" alt="CEU">
+                  </div>
+                  <div class="photo-square square3">
+                    <img src="images/apc.jpg" alt="APC">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Achievements Section -->
+            <div id="achievement" class="content-section">
+              <h2>Achievements</h2>
+
+              <!-- Achievements Details on Top -->
+              <div class="achievements-box flex-column">
+                <div class="achievement-details">
+                  <p>Undergraduate <span class="highlight">Research Paper</span> Presentation at 17th EdukCircle International Convention on Psychological Communication 2019</p>
+                  <p>Registered <span class="highlight">Psychometrician</span> Professional Regulation Commission License No.0022517</p>
+                  <p>Market <span class="highlight">Training</span> at Philippine Survey and Research Center</p>
+                  <p>The <span class="highlight">Data Analyst</span> Course Certificate at Udemy</p>
+                  <p>IBM SkillsBuild Digital Credential for <span class="highlight">Web Development</span> Essentials</p>
+                </div>
+              </div>
+
+              <!-- Photos Below -->
+                <div class="achievement-photos">
+                  <div class="photo-square ach-square1"><img src="images/laude.jpg" alt="Laude"></div>
+                  <div class="photo-square ach-square2"><img src="images/Edukcircle 2.jpg" alt="EdukCircle"></div>
+                  <div class="photo-square ach-square3"><img src="images/license.png" alt="License"></div>
+                  <div class="photo-square ach-square4"><img src="images/data.png" alt="Data"></div>
+                  <div class="photo-square ach-square5"><img src="images/web.png" alt="IBM"></div>
+                </div>
+            </div>
+
+            <!-- Contact -->
+            <div id="contact" class="content-section">
+              <h2>Contact Me</h2>
+              <div class="contact-container">
+                <div class="contact-info">
+                  <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <div class="info-text">
+                      <p><strong>Phone:</strong></p>
+                      <p>0927 881 0168</p>
+                    </div>
+                  </div>
+
+                  <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div class="info-text">
+                      <p><strong>Email:</strong></p>
+                      <p>tmvsayson@gmail.com</p>
+                    </div>
+                  </div>
+
+                  <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="info-text">
+                      <p><strong>Address:</strong></p>
+                      <p>San Mateo, Rizal</p>
+                    </div>
+                  </div>
+
+                  <div class="info-item">
+                    <i class="fab fa-github"></i>
+                    <div class="info-text">
+                      <p><strong>GitHub:</strong></p>
+                      <p><a href="https://github.com/TrishaMaeSayson" target="_blank">TrishaMaeSayson</a></p>
+                    </div>
+                  </div>
+
+                  <div class="info-item">
+                    <i class="fab fa-facebook"></i>
+                    <div class="info-text">
+                      <p><strong>Facebook:</strong></p>
+                      <p><a href="https://www.facebook.com/trishamae.sayson/" target="_blank">Trisha Mae Verdeflor Sayson</a></p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="contact-form">
+                  <h3>What is your feedback on my website?</h3>
+                  <form id="feedbackForm">
+                    <textarea id="feedbackMessage" placeholder="Type your message here..." required></textarea>
+                    <button type="submit">Send Feedback</button>
+                  </form>
+                  <p id="feedbackResponse" class="hidden">Thank you for your feedback!</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Resources -->
+            <div id="resources" class="content-section">
+              <h2>Resources</h2>
+              <p>Here are the tools, references, and inspirations I used to build this website:</p>
+
+              <div class="resources-grid">
+                <a href="https://themewagon.github.io/iPortfolio/#contact" target="_blank" class="resource-item">
+                  <img src="images/themewagon.png" alt="ThemeWagon">
+                  <p>ThemeWagon iPortfolio</p>
+                </a>
+
+                <a href="https://www.w3schools.com/html/default.asp" target="_blank" class="resource-item">
+                  <img src="images/w3schools.png" alt="HTML">
+                  <p>W3Schools HTML</p>
+                </a>
+
+                <a href="https://www.w3schools.com/css/default.asp" target="_blank" class="resource-item">
+                  <img src="images/w3schools.png" alt="CSS">
+                  <p>W3Schools CSS</p>
+                </a>
+
+                <a href="https://www.w3schools.com/js/default.asp" target="_blank" class="resource-item">
+                  <img src="images/w3schools.png" alt="JavaScript">
+                  <p>W3Schools JS</p>
+                </a>
+
+                <a href="https://www.w3schools.com/bootstrap5/index.php" target="_blank" class="resource-item">
+                  <img src="images/w3schools.png" alt="Bootstrap 5">
+                  <p>W3Schools Bootstrap 5</p>
+                </a>
+
+                <a href="https://coolors.co/visualizer/1a090d-a393bf-9882ac-73648a-ffffff" target="_blank" class="resource-item">
+                  <img src="images/coolors.png" alt="Coolors">
+                  <p>Coolors Palette</p>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-2"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
