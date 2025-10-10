@@ -3,11 +3,11 @@
     <h2>Achievements</h2>
     <div class="achievements-box">
       <div class="achievement-details">
-        <p>Undergraduate <span class="highlight">Research Paper</span> Presentation...</p>
-        <p>Registered <span class="highlight">Psychometrician</span>...</p>
-        <p>Market <span class="highlight">Training</span>...</p>
-        <p><span class="highlight">Data Analyst</span> Course Certificate at Udemy</p>
-        <p>IBM SkillsBuild Digital Credential for <span class="highlight">Web Development</span></p>
+        <p>Undergraduate <span class="highlight">Research Paper</span> Presentation at 17th EdukCircle International Convention on Psychological Communication 2019</p>
+        <p>Registered <span class="highlight">Psychometrician</span> Professional Regulation Commission License No.0022517</p>
+        <p>Market <span class="highlight">Training</span> at Philippine Survey and Research Center</p>
+        <p>The <span class="highlight">Data Analyst</span> Course Certificate at Udemy</p>
+        <p>IBM SkillsBuild Digital Credential for <span class="highlight">Web Development</span> Essentials</p>
       </div>
     </div>
     <div class="achievement-photos">

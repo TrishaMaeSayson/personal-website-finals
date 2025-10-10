@@ -3,11 +3,45 @@
     <h2>Contact Me</h2>
     <div class="contact-container">
       <div class="contact-info">
-        <div class="info-item"><i class="fas fa-phone"></i><p>0927 881 0168</p></div>
-        <div class="info-item"><i class="fas fa-envelope"></i><p>tmvsayson@gmail.com</p></div>
-        <div class="info-item"><i class="fas fa-map-marker-alt"></i><p>San Mateo, Rizal</p></div>
-        <div class="info-item"><i class="fab fa-github"></i><p><a href="https://github.com/TrishaMaeSayson" target="_blank">GitHub</a></p></div>
-        <div class="info-item"><i class="fab fa-facebook"></i><p><a href="https://www.facebook.com/trishamae.sayson/" target="_blank">Facebook</a></p></div>
+        <div class="info-item">
+          <i class="fas fa-phone"></i>
+          <div class="info-text">
+            <p><strong>Phone:</strong></p>
+            <p>0927 881 0168</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <i class="fas fa-envelope"></i>
+          <div class="info-text">
+            <p><strong>Email:</strong></p>
+            <p>tmvsayson@gmail.com</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <div class="info-text">
+            <p><strong>Address:</strong></p>
+            <p>San Mateo, Rizal</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <i class="fab fa-github"></i>
+          <div class="info-text">
+            <p><strong>GitHub:</strong></p>
+            <p><a href="https://github.com/TrishaMaeSayson" target="_blank">TrishaMaeSayson</a></p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <i class="fab fa-facebook"></i>
+          <div class="info-text">
+            <p><strong>Facebook:</strong></p>
+            <p><a href="https://www.facebook.com/trishamae.sayson/" target="_blank">Trisha Mae Verdeflor Sayson</a></p>
+          </div>
+        </div>
       </div>
 
       <div class="contact-form">

@@ -5,15 +5,19 @@
       <div class="education-box">
         <div class="school-entry">
           <h3>St. Matthew College</h3>
-          <p>Elementary & High School, San Mateo, Rizal<br />Last batch of 4-year program.</p>
+          <p>Elementary & High School, San Mateo, Rizal<br>
+          Last batch of the 4-year high school program.</p>
         </div>
         <div class="school-entry">
           <h3>Centro Escolar University Manila</h3>
-          <p>B.S. Psychology, <em>Cum Laude</em><br />Mendiola, Manila</p>
+          <p>B.S. Psychology, <em>Cum Laude</em><br>
+          9 Mendiola St, San Miguel, Manila</p>
         </div>
         <div class="school-entry">
           <h3>Asia Pacific College</h3>
-          <p>Associate in Computer Technology (Ongoing)<br />Makati City</p>
+          <p>Associate in Computer Technology (Ongoing)<br>
+          3 Humabon, Makati City<br>
+          Aspiring Data Analyst</p>
         </div>
       </div>
 

@@ -2,9 +2,9 @@
   <section id="about" class="content-section">
     <h2>About Me</h2>
     <div class="paragraph-box">
-      <p>I'm a returning student from San Mateo, Rizal...</p>
-      <p>I enjoy a wide range of hobbies including piano, drawing, anime, and badminton.</p>
-      <p>I’m proud of being self-aware and dedicated to personal growth...</p>
+      <p>I'm returning student from San Mateo, Rizal, currently pursuing an Associate in Computer Technology at Asia Pacific College.</p>
+      <p>I enjoy a wide range of hobbies, including playing the piano, singing, drawing both realistic portraits and anime characters, watching anime, reading manga, manhwa, and fanfiction, as well as playing badminton.</p>
+      <p>I’m proud of being self-aware and dedicated to personal growth. My goal is to further discover different aspects of myself while working toward a future role in the field of data.</p>
       <p>This website is part of my WEBPROG course requirement.</p>
     </div>
 
