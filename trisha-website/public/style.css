@@ -1,0 +1,745 @@
+* { 
+  box-sizing: border-box; 
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;                    
+  background-color: #FFFFFF; 
+  font-family: Verdana, sans-serif;
+}
+
+.content-section:not(#home) {
+  padding: 40px 20px;
+}
+
+.content-section {
+  min-height: auto; /* occupy one full screen */
+  padding: 80px 40px 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.nav-link.active {
+  color: #a393bf !important; /* highlight color */
+  font-weight: bold;
+}
+
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.col-md-2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  color: #fff;
+  padding: 1.25rem;      
+  min-height: 100vh;    
+  overflow-y: auto;
+  z-index: 1000;  
+}
+
+.col-md-2 .nav-item {
+  margin-bottom:auto;
+}
+
+.col-md-2 .nav-link {
+  color: white;          /* default text color */
+  font-size: 20px;          
+  padding: 0.45rem 0;       
+  display: block;           
+  transition: color 0.3s ease;
+}
+
+.col-md-2 .nav-link:hover {
+  color: #a393bf;           /* hover color */
+  cursor: pointer;
+}
+
+.col-md-10 {
+  margin-left: 16.6667%; /* roughly the width of col-md-2 (2/12 columns) */
+  width: 83.3333%;
+  padding: 40px;
+}
+
+h1{
+  margin-top: 1rem;
+  font-family: 'Abril Fatface', serif;
+  font-size: 40px;
+}
+
+h2 {
+  margin-bottom: 1.5rem; /* space between header and first paragraph */
+  font-family: 'Abril Fatface', serif;
+  font-size: 40px;
+  color: black;
+  margin-top: 0;
+}
+
+p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.profile-pic { 
+  min-height: 25vh;     
+  width: 150px;
+  height: 120px;
+  border-radius: 12%; 
+  object-fit: cover;   
+}
+
+#home {
+  display: flex !important;                /* only flex when active */
+  flex-direction: row !important;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+.home-text {
+    display: flex;
+    flex-direction: column;       
+    justify-content: center;      
+    align-items: flex-start;
+    min-height: 200px;
+}
+
+.highlight-name {
+  color:#73648a;
+  font-family: 'Lucida Handwriting', cursive;
+  font-size: 40px;
+}
+
+.word-thoughts { 
+  font-family: 'Lucida Handwriting', cursive; 
+  color: #73648a;
+}
+
+.word-feelings { 
+  font-family: 'Lucida Handwriting', cursive; 
+  color: #9882ac;
+}
+
+.word-actions { 
+  font-family: 'Lucida Handwriting', cursive; 
+  color: #a393bf;
+}
+
+#home h2 {
+  margin-bottom: 1.5rem;
+  font-family: 'Abril Fatface', serif;
+  font-size: 40px;
+  color: black;
+  margin-top: 0;
+}
+
+#typing-text {
+  font-size: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  min-height: 80px;
+  position: relative;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+#home img.profile-pic {
+    width: 350px;             
+    height: auto;            
+    border-radius: 12px;       
+    object-fit: cover;        
+    position: relative;
+    z-index: 2;
+}
+
+#home .photo-frame {
+  position: relative;
+  display: inline-block;
+}
+
+/* Container for background rectangles */
+.photo-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* behind photo */
+}
+
+/* Base style for all rectangles */
+.photo-background .rect {
+  position: absolute;
+  border-radius: 12px;
+  opacity: 0.85;
+  z-index: 0;
+}
+
+/* Uneven overlapping rectangles (customize colors + positions) */
+.rect1 {
+  width: 135%;
+  height: 135%;
+  top: -100px;       /* pushed higher */
+  right: -120px;     /* pushed further right */
+  background-color: #73648a;
+  transform: rotate(-5deg);
+  opacity: 0.6;      /* furthest, lightest */
+  z-index: 0;
+}
+
+.rect2 {
+  width: 120%;
+  height: 120%;
+  top: -20px;        /* mid layer */
+  right: -60px;
+  background-color: #9882ac;
+  transform: rotate(4deg);
+  opacity: 0.75;
+  z-index: 1;
+}
+
+.rect3 {
+  width: 105%;
+  height: 105%;
+  top: 80px;         /* pushed lower */
+  right: 10px;
+  background-color: #a393bf;
+  transform: rotate(-3deg);
+  opacity: 0.9;      /* closest, darker */
+  z-index: 2;
+}
+
+#about p{
+  margin-left: 50px;
+  margin-bottom: 1.5rem;
+}
+
+.paragraph-box {
+  flex: 1;
+  background-color: #f3eefc;
+  border: 2px solid #a393bf;
+  border-radius: 15px;
+  padding: 25px 30px;
+  box-shadow: 0 4px 10px rgba(115, 100, 138, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 30px;
+}
+
+.about-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* LEFT SIDE: Table + Links stacked */
+.about-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  align-items: flex-start;
+  margin-left: 50px;
+}
+
+/* TABLE styling */
+.about-info {
+  width: 100%;
+}
+
+.about-info table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px; /* spacing between rows */
+}
+
+.about-info td {
+  padding: 5px 10px;
+  vertical-align: top;
+}
+
+/* LINKS styling (under the table) */
+.about-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.about-logo {
+  width: 140px;               /* consistent box width */
+  height: 100px;              /* consistent box height */
+  background-color: #73648a;     /* background for transparent logos */
+  border-radius: 12px;
+  display: flex;              /* center logo inside the box */
+  justify-content: center;
+  align-items: center;
+  padding: 10px;              /* space around logo */
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.about-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.about-logo:hover {
+  transform: scale(1.05);
+}
+
+/* Right Side (music section) */
+.about-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;       /* center all items horizontally */
+  justify-content: flex-start;
+  gap: 1rem;
+  padding-top: 0px;          /* adjust to align top of photo with table */
+}
+
+/* Album cover photo */
+.music-art .drawing {
+  width: 250px;
+  height: 250px;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.music-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 6px; /* spacing between photo and controls */
+  position: relative;
+}
+
+/* Align play + visualizer perfectly with photo width */
+.music-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 250px; /* same as photo width */
+  gap: 12px;
+}
+
+/* Transparent Visualizer */
+.music-visualizer {
+  width: 250px;
+  height: 15px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  gap: 4px;
+  background: transparent; /* no box background */
+}
+
+/* Visualizer bars */
+.music-visualizer span {
+  width: 6px;
+  height: 15px;
+  background: black;
+  border-radius: 2px;
+  transform-origin: bottom;
+  transition: background 0.3s ease, height 0.3s ease;
+}
+
+.music-visualizer span.active {
+  background: #a393bf; /* or any accent color you want */
+}
+
+@keyframes bounce {
+  0%, 100% { height: 10px; }
+  50% { height: 30px; }
+}
+
+/* Play button */
+.play-btn {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s ease;
+}
+
+.play-btn:hover {
+  background-color: #a393bf;
+  transform: scale(1.1);
+}
+
+.play-btn.playing {
+  background-color: #a393bf; /* 💜 replace with your preferred color */
+}
+
+/* Education Section Layout */
+.education-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+/* Left Rectangle */
+.education-box {
+  flex: 1;
+  background-color: #f3eefc;
+  border: 2px solid #a393bf;
+  border-radius: 15px;
+  padding: 25px 30px;
+  box-shadow: 0 4px 10px rgba(115, 100, 138, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.school-entry {
+  margin-bottom: 18px;
+}
+
+.school-entry h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #73648a;
+}
+
+.school-entry p {
+  margin: 5px 0 0;
+  font-size: 15px;
+}
+
+/* Right Side: Overlapping Photo Squares */
+.education-photos {
+  flex: 1;
+  position: relative;
+  height: 300px;
+}
+
+.photo-square {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease;
+}
+
+.photo-square img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Overlap arrangement */
+.square1 {
+  top: 0;
+  left: 40px;
+  z-index: 3;
+  transform: rotate(-6deg);
+}
+
+.square2 {
+  top: 80px;
+  left: 170px;
+  z-index: 2;
+  transform: rotate(4deg);
+}
+
+.square3 {
+  top: 180px;
+  left: 240px;
+  z-index: 1;
+  transform: rotate(-3deg);
+}
+
+.photo-square:hover {
+  transform: scale(1.05);
+  z-index: 4;
+}
+
+/* Container layout */
+.achievements-box {
+  display: flex;
+  background-color: #f3eefc;
+  border: 2px solid #a393bf;
+  border-radius: 15px;
+  padding: 25px 30px;
+  box-shadow: 0 4px 10px rgba(115, 100, 138, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Text details */
+.achievement-details {
+  padding: 10px 15px;
+}
+
+.achievement-details .highlight {
+  font-weight: 600;
+  color: #73648a;
+}
+
+/* Container for achievement photos */
+.achievement-photos {
+  margin-top: 50px;
+  display: flex;              /* lay photos side by side */
+  justify-content: flex-start; /* align to left */
+  align-items: center;
+  gap: 15px;                  /* space between photos */
+  height: auto;            /* optional: wrap to next line if screen too small */
+}
+
+/* Individual photo boxes */
+.achievement-photos .photo-square {
+  position: relative;         /* remove absolute positioning */
+  width: 185px;
+  height: 185px;
+  border-radius: 8px;         /* photograph corners */
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.4s ease;
+}
+
+.achievement-photos .photo-square img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.achievement-photos .photo-square:hover {
+  transform: scale(1.05);     /* subtle hover effect */
+}
+
+/* CONTACT SECTION */
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #f3eefc;
+  border: 2px solid #a393bf;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 4px 10px rgba(115, 100, 138, 0.2);
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+/* Left Side */
+.contact-info {
+  flex: 1;
+  min-width: 250px;
+}
+
+.contact-info h3 {
+  color: #73648a;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.contact-info p {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.contact-info a {
+  color: #73648a;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* Right Side */
+.contact-form {
+  flex: 1;
+  min-width: 280px;
+}
+
+.contact-form h3 {
+  color: #73648a;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form textarea {
+  width: 100%;
+  height: 200px;
+  border: 1px solid #a393bf;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 15px;
+  resize: none;
+  outline: none;
+}
+
+.contact-form textarea:focus {
+  border-color: #73648a;
+  box-shadow: 0 0 5px rgba(115, 100, 138, 0.3);
+}
+
+.contact-form button {
+  align-self: flex-start;
+  background-color: #73648a;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 18px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.contact-form button:hover {
+  background-color: #a393bf;
+  transform: scale(1.05);
+}
+
+/* Response message */
+#feedbackResponse {
+  color: #73648a;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Contact Info Container */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Each row (icon + text) */
+.info-item {
+  display: flex;
+  align-items: center;  /* vertically center icon + text */
+  gap: 15px;
+}
+
+/* Font Awesome Icon */
+.info-item i {
+  font-size: 30px;
+  color: #73648a;
+  min-width: 40px;     /* keeps icons aligned even if text lengths differ */
+  text-align: center;
+}
+
+/* Text beside icon */
+.info-text p {
+  margin: 2px 0;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+/* Bolded labels */
+.info-text strong {
+  color: #73648a;
+}
+
+/* GitHub link styling */
+.info-text a {
+  color: #73648a;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.info-text a:hover {
+  color: #a393bf;
+  text-decoration: underline;
+}
+
+.info-item .fa-facebook {
+  color: #1877f2; /* Facebook blue */
+}
+
+.info-item .fa-github {
+  color: #333; /* GitHub dark gray */
+}
+
+/* Resources Section */
+
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.resource-item {
+  width: 200px;                /* fixed square width */
+  height: 200px;               /* fixed square height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;     /* centers content vertically */
+  align-items: center;         /* centers content horizontally */
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 15px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.resource-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.resource-item p {
+  font-size: 15px;
+  font-weight: 600;
+  color: #73648a;
+}
+
+.resource-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+
+
