@@ -23,5 +23,21 @@
 </template>
 
 <script>
-export default { name: "Contact" };
+export default {
+  name: "Contact",
+  mounted() {
+    const form = document.getElementById("feedbackForm");
+    const response = document.getElementById("feedbackResponse");
+
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      const message = document.getElementById("feedbackMessage").value.trim();
+      if (message) {
+        response.classList.remove("hidden");
+        form.reset();
+        setTimeout(() => response.classList.add("hidden"), 3000);
+      }
+    });
+  }
+};
 </script>

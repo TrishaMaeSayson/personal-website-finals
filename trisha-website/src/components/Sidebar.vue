@@ -17,5 +17,26 @@
 <script>
 export default {
   name: "Sidebar",
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  beforeUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  },
+  methods: {
+    handleScroll() {
+      const scrollPosition = window.scrollY + window.innerHeight / 3;
+      document.querySelectorAll('.nav-link').forEach(link => {
+        const section = document.querySelector(link.getAttribute('href'));
+        if (section) {
+          const top = section.offsetTop;
+          const bottom = top + section.offsetHeight;
+          if (scrollPosition >= top && scrollPosition < bottom)
+            link.classList.add('active');
+          else link.classList.remove('active');
+        }
+      });
+    }
+  }
 };
 </script>
