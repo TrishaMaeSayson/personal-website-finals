@@ -20,9 +20,9 @@
         </div>
 
         <div class="about-links">
-          <a href="https://myanimelist.net/profile/Psysonsy" target="_blank"><img src="/images/MAL.png" alt="MAL" /></a>
-          <a href="https://www.deviantart.com/yellow-sonsy" target="_blank"><img src="/images/deviant.png" alt="DeviantArt" /></a>
-          <a href="https://archiveofourown.org/users/Psysonsy/profile" target="_blank"><img src="/images/A03.png" alt="AO3" /></a>
+          <a href="https://myanimelist.net/profile/Psysonsy" target="_blank" class="about-logo"><img src="/images/MAL.png" alt="MAL" /></a>
+          <a href="https://www.deviantart.com/yellow-sonsy" target="_blank" class="about-logo"><img src="/images/deviant.png" alt="DeviantArt" /></a>
+          <a href="https://archiveofourown.org/users/Psysonsy/profile" target="_blank" class="about-logo"><img src="/images/A03.png" alt="AO3" /></a>
         </div>
       </div>
 
@@ -34,6 +34,9 @@
           <div class="music-controls">
             <button id="aboutPlayBtn" class="play-btn"><i class="fas fa-play"></i></button>
             <div class="music-visualizer">
+              <span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span>
               <span></span><span></span><span></span><span></span><span></span>
             </div>
           </div>
