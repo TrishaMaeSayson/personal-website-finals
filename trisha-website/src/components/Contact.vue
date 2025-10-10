@@ -47,31 +47,53 @@
       <div class="contact-form">
         <h3>What is your feedback on my website?</h3>
         <form id="feedbackForm">
-          <textarea id="feedbackMessage" placeholder="Type your message here..." required></textarea>
-          <button type="submit">Send Feedback</button>
+          <textarea 
+            v-model="feedbackMessage" 
+            placeholder="Type your message here..." 
+            required
+          ></textarea>
+          <button type="submit" :disabled="isSending">
+            {{ isSending ? 'Sending...' : 'Sent Feedback' }}
+          </button>
         </form>
-        <p id="feedbackResponse" class="hidden">Thank you for your feedback!</p>
+        <p v-if="feedbackResponse" class="feedback-message">
+          {{ feedbackResponse }}
+        </p>
       </div>
     </div>
   </section>
 </template>
 
-<script>
-export default {
-  name: "Contact",
-  mounted() {
-    const form = document.getElementById("feedbackForm");
-    const response = document.getElementById("feedbackResponse");
+<script setup>
+import { ref } from 'vue'
+import { supabase } from '../supabase' // 👈 adjust path if needed
 
-    form.addEventListener("submit", e => {
-      e.preventDefault();
-      const message = document.getElementById("feedbackMessage").value.trim();
-      if (message) {
-        response.classList.remove("hidden");
-        form.reset();
-        setTimeout(() => response.classList.add("hidden"), 3000);
-      }
-    });
+const feedbackMessage = ref('')
+const feedbackResponse = ref('')
+const isSending = ref(false)
+
+async function sendFeedback() {
+  if (!feedbackMessage.value.trim()) {
+    feedbackResponse.value = 'Please enter a message before sending.'
+    return
   }
-};
+
+  isSending.value = true
+  feedbackResponse.value = ''
+
+  const { error } = await supabase
+    .from('feedback')
+    .insert([{ message: feedbackMessage.value.trim() }])
+
+  if (error) {
+    console.error(error)
+    feedbackResponse.value = 'Something went wrong. Please try again.'
+  } else {
+    feedbackResponse.value = 'Thank you for your feedback!'
+    feedbackMessage.value = ''
+  }
+
+  isSending.value = false
+  setTimeout(() => (feedbackResponse.value = ''), 3000)
+}
 </script>
