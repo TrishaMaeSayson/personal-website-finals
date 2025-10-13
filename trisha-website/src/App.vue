@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid">
+  <div class="app-container">
     <div class="row g-0 flex-nowrap">
       <!-- Sidebar -->
       <div class="col-12 col-md-2 sidebar-col">
