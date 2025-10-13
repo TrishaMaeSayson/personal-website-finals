@@ -1,3 +1,6 @@
+/* ======================================
+   🌐 GLOBAL RESETS & BASICS
+====================================== */
 * { 
   box-sizing: border-box; 
 }
@@ -12,28 +15,14 @@ body {
   font-family: Verdana, sans-serif;
 }
 
+/* ======================================
+   🧩 LAYOUT STRUCTURE (Container & Columns)
+====================================== */
 .content-section:not(#home) {
   padding: 40px 20px;
 }
 
-.content-section {
-  min-height: auto; /* occupy one full screen */
-  padding: 80px 40px 120px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.nav-link.active {
-  color: #a393bf !important; /* highlight color */
-  font-weight: bold;
-}
-
-.container-fluid {
-  padding-left: 0;
-  padding-right: 0;
-}
-
+/* Two-column layout (Sidebar + Main content) */
 .col-md-2 {
   background-color: #000;
   color: #fff;
@@ -43,20 +32,45 @@ body {
   z-index: 1000;  
 }
 
+.col-md-10 {
+  margin-left: 16.6667%; /* roughly the width of col-md-2 (2/12 columns) */
+  width: 83.3333%;
+  padding: 40px;
+}
+
+/* Fix for static offcanvas sidebar */
 .offcanvas-md.offcanvas-start.show.position-static {
   position: static !important;
 }
 
-.col-md-2 .nav-item {
-  margin-bottom:auto;
+/* ======================================
+   🎨 SIDEBAR & NAVIGATION
+====================================== */
+
+.sidebar {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #000 !important;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.col-md-2 .nav-link {
-  color: white;          /* default text color */
-  font-size: 20px;          
-  padding: 0.45rem 0;       
-  display: block;           
-  transition: color 0.3s ease;
+.profile-pic { 
+  min-height: 25vh;     
+  width: 150px;
+  height: 120px;
+  border-radius: 12%; 
+  object-fit: cover;   
+}
+
+/* Sidebar nav links */
+.sidebar .nav-link {
+  color: #fff !important;
+  font-size: 18px;
+  padding: 8px 0;
+  transition: 0.3s;
 }
 
 .col-md-2 .nav-link:hover {
@@ -64,51 +78,40 @@ body {
   cursor: pointer;
 }
 
-.col-md-10 {
-  margin-left: 16.6667%; /* roughly the width of col-md-2 (2/12 columns) */
-  width: 83.3333%;
-  padding: 40px;
+.nav-link.active {
+  color: #a393bf !important; /* highlight color */
+  font-weight: bold;
 }
 
-/* Make layout responsive for mobile screens */
+/* ======================================
+   📱 RESPONSIVE ADJUSTMENTS
+====================================== */
+
 @media (max-width: 991.98px) {
-  .col-md-2 {
-    position: relative; /* stop being fixed */
-    width: 100%;
+  .sidebar {
     min-height: auto;
-    z-index: auto;
-  }
-
-  .col-md-10 {
-    margin-left: 0;
-    width: 100%;
-    padding: 20px;
-  }
-
-  /* Optional: Center sidebar content for better mobile layout */
-  .profile-section {
     text-align: center;
+    padding: 1rem;
   }
 
-  .nav.flex-column {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
+  .sidebar .navbar-collapse {
+    background-color: #000;
+    border-radius: 10px;
+    margin-top: 1rem;
   }
 
-  .nav-link {
-    font-size: 16px;
-    padding: 5px 10px;
+  .navbar-toggler {
+    border: none;
   }
 
-  /* Reduce profile image size */
-  .profile-pic {
-    width: 100px;
-    height: 100px;
+  .navbar-toggler:focus {
+    box-shadow: none;
   }
 }
 
+/* ======================================
+   🧍‍♀️ GLOBAL TEXT STYLES
+====================================== */
 h1{
   margin-top: 1rem;
   font-family: 'Abril Fatface', serif;
@@ -129,12 +132,16 @@ p {
   font-size: 16px;
 }
 
-.profile-pic { 
-  min-height: 25vh;     
-  width: 150px;
-  height: 120px;
-  border-radius: 12%; 
-  object-fit: cover;   
+/* ======================================
+   🏠 HOME SECTION
+====================================== */
+
+.content-section {
+  min-height: auto; 
+  padding: 80px 40px 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 #home {
@@ -263,6 +270,10 @@ p {
   opacity: 0.9;      /* closest, darker */
   z-index: 2;
 }
+
+/* ======================================
+   📘 ABOUT SECTION
+====================================== */
 
 #about p{
   margin-left: 50px;
@@ -438,7 +449,9 @@ p {
   background-color: #a393bf; /* 💜 replace with your preferred color */
 }
 
-/* Education Section Layout */
+/* ======================================
+   🎓 EDUCATION SECTION
+====================================== */
 .education-container {
   display: flex;
   justify-content: space-between;
@@ -524,7 +537,9 @@ p {
   z-index: 4;
 }
 
-/* Container layout */
+/* ======================================
+   🏆 ACHIEVEMENTS SECTION
+====================================== */
 .achievements-box {
   display: flex;
   background-color: #f3eefc;
@@ -579,7 +594,9 @@ p {
   transform: scale(1.05);     /* subtle hover effect */
 }
 
-/* CONTACT SECTION */
+/* ======================================
+   ✉️ CONTACT SECTION
+====================================== */
 .contact-container {
   display: flex;
   justify-content: space-between;
@@ -735,7 +752,9 @@ p {
   color: #333; /* GitHub dark gray */
 }
 
-/* Resources Section */
+/* ======================================
+   📚 RESOURCES SECTION
+====================================== */
 
 .resources-grid {
   display: grid;
@@ -783,3 +802,9 @@ p {
 
 
 
+/*
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+*/
