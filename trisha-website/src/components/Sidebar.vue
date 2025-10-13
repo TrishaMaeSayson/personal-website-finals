@@ -1,7 +1,7 @@
 <template>
-  <nav class="sidebar navbar navbar-expand-lg flex-lg-column align-items-center p-3">
+  <nav class="sidebar navbar navbar-expand-lg flex-lg-column p-3">
     <!-- Brand / Profile -->
-    <a class="navbar-brand text-center w-100 mb-2" href="#home">
+    <a class="navbar-brand w-100 mb-2" href="#home">
       <img src="/images/selfie.jpg" class="profile-pic mb-2" alt="Profile" />
       <h1>TreseMe</h1>
     </a>
