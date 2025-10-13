@@ -9,17 +9,14 @@
       <!-- Main content -->
       <div class="col-12 col-md-10 main-content">
         <div class="p-4">
-          <Home />
-          <About />
-          <Education />
-          <Achievements />
-          <Contact />
-          <Resources />
+          <!-- Router will load the page component here -->
+          <router-view />
         </div>
       </div>
     </div>
   </div>
 </template>
+
 
 <script>
 import Sidebar from './components/Sidebar.vue'
