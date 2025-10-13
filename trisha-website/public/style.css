@@ -33,7 +33,9 @@ body {
 }
 
 .col-md-10 {
-  margin: 0 auto; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   max-width: 1000px;
   padding: 40px;
 }
@@ -55,6 +57,10 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.sidebar .navbar-collapse {
+  background-color: #000 !important;
 }
 
 .profile-pic { 
@@ -98,6 +104,15 @@ body {
 .navbar-toggler {
   border: none;
   filter: invert(1);
+}
+
+.navbar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* spacing between links */
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
 /* ======================================
