@@ -34,8 +34,9 @@ body {
 
 .col-md-10 {
   display: block;
-  margin: none;
   padding: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 /* Fix for static offcanvas sidebar */
@@ -55,12 +56,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-}
-
-.sidebar .navbar-collapse {
-  background-color: #000; /* match sidebar */
-  width: 100%;
-  padding: 1rem 0;
 }
 
 .profile-pic { 
@@ -131,6 +126,12 @@ body {
     width: 100%;
     padding: 20px;
   }
+}
+
+.sidebar .navbar-collapse {
+  background-color: #000; /* match sidebar */
+  width: 100%;
+  padding: 1rem 0;
 }
 
 /* ======================================
