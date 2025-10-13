@@ -70,6 +70,45 @@ body {
   padding: 40px;
 }
 
+/* Make layout responsive for mobile screens */
+@media (max-width: 991.98px) {
+  .col-md-2 {
+    position: relative; /* stop being fixed */
+    width: 100%;
+    min-height: auto;
+    z-index: auto;
+  }
+
+  .col-md-10 {
+    margin-left: 0;
+    width: 100%;
+    padding: 20px;
+  }
+
+  /* Optional: Center sidebar content for better mobile layout */
+  .profile-section {
+    text-align: center;
+  }
+
+  .nav.flex-column {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .nav-link {
+    font-size: 16px;
+    padding: 5px 10px;
+  }
+
+  /* Reduce profile image size */
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+  }
+}
+
 h1{
   margin-top: 1rem;
   font-family: 'Abril Fatface', serif;
