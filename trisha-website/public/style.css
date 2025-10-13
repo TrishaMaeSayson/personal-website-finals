@@ -36,6 +36,7 @@ body {
 .col-md-10 .p-4 {
   max-width: 1000px;
   margin: 0 auto;
+  margin-left: 220px;
 }
 
 /* Fix for static offcanvas sidebar */
@@ -98,14 +99,14 @@ body {
   display: block;
   width: 100%;
   color: #fff !important;
-  font-size: 30px;
+  font-size: 30px !important;
   padding: 12px 0;
   text-align: center;
   transition: color 0.3s;
 }
 
 .col-md-2 .nav-link:hover {
-  color: #a393bf;           /* hover color */
+  color: #a393bf !important;           /* hover color */
   cursor: pointer;
 }
 
