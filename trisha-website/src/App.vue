@@ -1,22 +1,31 @@
 <template>
-  <div class="app-container">
-    <div class="row g-0 flex-nowrap">
+  <div class="container-fluid">
+    <div class="row g-0">
       <!-- Sidebar -->
-      <div class="col-12 col-md-2 sidebar-col">
+      <div class="col-md-2">
         <Sidebar />
       </div>
 
       <!-- Main content -->
-      <div class="col-12 col-md-10 main-content">
-        <div class="p-4">
-          <!-- Router will load the page component here -->
-          <router-view />
+      <div class="col-md-10 p-4">
+        <div class="row">
+          <div class="col-2"></div>
+
+          <div class="col-8">
+            <Home />
+            <About />
+            <Education />
+            <Achievements />
+            <Contact />
+            <Resources />
+          </div>
+
+          <div class="col-2"></div>
         </div>
       </div>
     </div>
   </div>
 </template>
-
 
 <script>
 import Sidebar from './components/Sidebar.vue'
