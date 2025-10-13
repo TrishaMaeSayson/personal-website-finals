@@ -1,14 +1,14 @@
 <template>
-  <nav class="sidebar navbar navbar-expand-lg flex-lg-column p-3">
+  <nav class="sidebar navbar navbar-expand-lg navbar-dark flex-column p-3">
     <!-- Brand / Profile -->
-    <a class="navbar-brand w-100 mb-2" href="#home">
+    <a class="navbar-brand w-100 mb-3 text-center" href="#home">
       <img src="/images/selfie.jpg" class="profile-pic mb-2" alt="Profile" />
-      <h1>TreseMe</h1>
+      <h1 class="brand-name">TreseMe</h1>
     </a>
 
-    <!-- Hamburger Button -->
+    <!-- Hamburger Button (visible on mobile) -->
     <button
-      class="navbar-toggler"
+      class="navbar-toggler mb-3"
       type="button"
       data-bs-toggle="collapse"
       data-bs-target="#sidebarNav"
@@ -20,7 +20,7 @@
     </button>
 
     <!-- Collapsible Menu -->
-    <div class="collapse navbar-collapse flex-column mt-3 w-100 show" id="sidebarNav">
+    <div class="collapse navbar-collapse flex-column w-100" id="sidebarNav">
       <ul class="navbar-nav w-100 text-center">
         <li class="nav-item"><a href="#home" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
         <li class="nav-item"><a href="#about" class="nav-link"><i class="fas fa-user"></i> About</a></li>
