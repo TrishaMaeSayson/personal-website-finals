@@ -33,10 +33,8 @@ body {
 }
 
 .col-md-10 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 1000px;
+  display: block;
+  margin: none;
   padding: 40px;
 }
 
@@ -56,11 +54,13 @@ body {
   color: #fff;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .sidebar .navbar-collapse {
-  background-color: #000 !important;
+  background-color: #000; /* match sidebar */
+  width: 100%;
+  padding: 1rem 0;
 }
 
 .profile-pic { 
@@ -86,6 +86,7 @@ body {
   font-size: 18px;
   padding: 10px 0;
   display: block;
+  width: 100%;
   transition: color 0.3s;
   font-family: Verdana, sans-serif;
   text-align: center;
@@ -107,12 +108,8 @@ body {
 }
 
 .navbar-nav {
-  display: flex;
   flex-direction: column;
-  gap: 10px; /* spacing between links */
-  padding: 0;
-  margin: 0;
-  list-style: none;
+  gap: 0; /* spacing between links */
 }
 
 /* ======================================
@@ -120,20 +117,19 @@ body {
 ====================================== */
 
 @media (max-width: 991.98px) {
+  .row.flex-nowrap {
+    flex-wrap: wrap; /* allow sidebar and main content to stack */
+  }
+
   .sidebar {
+    width: 100%;
     min-height: auto;
-    text-align: center;
     padding: 1rem;
   }
 
-  .sidebar .navbar-collapse {
-    background-color: #000;
-    border-radius: 10px;
-    margin-top: 1rem;
-  }
-
-  .navbar-toggler:focus {
-    box-shadow: none;
+  .col-md-10 {
+    width: 100%;
+    padding: 20px;
   }
 }
 
