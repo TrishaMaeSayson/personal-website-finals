@@ -1,5 +1,5 @@
 <template>
-  <nav class="sidebar navbar navbar-expand-lg navbar-dark bg-dark flex-lg-column align-items-center p-3">
+  <nav class="sidebar navbar navbar-expand-lg flex-lg-column align-items-center p-3">
     <!-- Brand / Profile -->
     <a class="navbar-brand text-center w-100 mb-2" href="#home">
       <img src="/images/selfie.jpg" class="profile-pic mb-2" alt="Profile" />
@@ -20,7 +20,7 @@
     </button>
 
     <!-- Collapsible Menu -->
-    <div class="collapse navbar-collapse flex-column mt-3 w-100" id="sidebarNav">
+    <div class="collapse navbar-collapse flex-column mt-3 w-100 show" id="sidebarNav">
       <ul class="navbar-nav w-100 text-center">
         <li class="nav-item"><a href="#home" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
         <li class="nav-item"><a href="#about" class="nav-link"><i class="fas fa-user"></i> About</a></li>
