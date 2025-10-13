@@ -86,7 +86,7 @@ body {
 }
 
 .brand-name {
-  font-size: 28px;
+  font-size: 36px !important;
   font-family: Verdana, sans-serif;
   color: #fff;
 }
