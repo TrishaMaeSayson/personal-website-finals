@@ -32,9 +32,15 @@ body {
   z-index: 1000;  
 }
 
-.col-md-10 {
+/*.col-md-10 {
   display: block;
   padding: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}*/
+
+/* Main content centering */
+.col-md-10 .p-4 {
   max-width: 1000px;
   margin: 0 auto;
 }
@@ -48,7 +54,21 @@ body {
    🎨 SIDEBAR & NAVIGATION
 ====================================== */
 
-.sidebar {
+.sidebar,
+.sidebar .navbar-collapse {
+  background-color: #000 !important;  /* solid black */
+}
+
+.sidebar .navbar-nav {
+  display: flex;             /* ensure flex container */
+  flex-direction: column;    /* vertical list */
+  gap: 10px;                 /* spacing between links */
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/*.sidebar {
   width: 100%;
   min-height: 100vh;
   background-color: #000 !important;
@@ -56,7 +76,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-}
+}*/
 
 .profile-pic { 
   min-height: 25vh;     
@@ -82,8 +102,6 @@ body {
   padding: 10px 0;
   display: block;
   width: 100%;
-  transition: color 0.3s;
-  font-family: Verdana, sans-serif;
   text-align: center;
 }
 
@@ -126,12 +144,6 @@ body {
     width: 100%;
     padding: 20px;
   }
-}
-
-.sidebar .navbar-collapse {
-  background-color: #000; /* match sidebar */
-  width: 100%;
-  padding: 1rem 0;
 }
 
 /* ======================================
