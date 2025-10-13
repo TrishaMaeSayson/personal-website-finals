@@ -59,9 +59,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1.5rem 0;
   z-index: 1000;
-  justify-content: center;
 }
 
 .sidebar,
@@ -130,13 +128,6 @@ body {
 /* ======================================
    📱 RESPONSIVE ADJUSTMENTS
 ====================================== */
-
-/* Desktop main content offset for fixed sidebar */
-@media (min-width: 992px) {
-  .col-md-10.main-content {
-    margin-left: 220px; /* same as sidebar width */
-  }
-}
 
 @media (max-width: 991.98px) {
   .row.flex-nowrap {
