@@ -1,14 +1,14 @@
 <template>
-  <nav class="sidebar d-flex flex-column align-items-center p-3">
+  <nav class="sidebar navbar navbar-expand-lg navbar-dark bg-dark flex-lg-column align-items-center p-3">
     <!-- Brand / Profile -->
-    <a class="navbar-brand text-center w-100 mb-3" href="#home">
+    <a class="navbar-brand text-center w-100 mb-2" href="#home">
       <img src="/images/selfie.jpg" class="profile-pic mb-2" alt="Profile" />
-      <h1 class="brand-name">TreseMe</h1>
+      <h1>TreseMe</h1>
     </a>
 
-    <!-- Hamburger Button (mobile only) -->
+    <!-- Hamburger Button -->
     <button
-      class="navbar-toggler d-lg-none align-self-start mb-3"
+      class="navbar-toggler"
       type="button"
       data-bs-toggle="collapse"
       data-bs-target="#sidebarNav"
@@ -20,8 +20,8 @@
     </button>
 
     <!-- Collapsible Menu -->
-    <div class="collapse navbar-collapse flex-column w-100" id="sidebarNav">
-      <ul class="nav flex-column w-100 text-center">
+    <div class="collapse navbar-collapse flex-column mt-3 w-100" id="sidebarNav">
+      <ul class="navbar-nav w-100 text-center">
         <li class="nav-item"><a href="#home" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
         <li class="nav-item"><a href="#about" class="nav-link"><i class="fas fa-user"></i> About</a></li>
         <li class="nav-item"><a href="#education" class="nav-link"><i class="fas fa-graduation-cap"></i> Education</a></li>
@@ -52,7 +52,8 @@ export default {
           const bottom = top + section.offsetHeight;
           if (scrollPosition >= top && scrollPosition < bottom)
             link.classList.add('active');
-          else link.classList.remove('active');
+          else
+            link.classList.remove('active');
         }
       });
     }

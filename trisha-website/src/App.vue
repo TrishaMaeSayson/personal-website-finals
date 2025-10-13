@@ -2,13 +2,13 @@
   <div class="container-fluid">
     <div class="row g-0 flex-nowrap">
       <!-- Sidebar -->
-      <div class="col-12 col-md-2 sidebar-col p-0">
+      <div class="col-12 col-md-2 sidebar-col">
         <Sidebar />
       </div>
 
       <!-- Main content -->
       <div class="col-12 col-md-10 main-content">
-        <div class="content-wrapper p-4">
+        <div class="p-4">
           <Home />
           <About />
           <Education />
