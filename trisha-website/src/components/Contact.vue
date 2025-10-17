@@ -2,6 +2,7 @@
   <section id="contact" class="content-section">
     <h2>Contact Me</h2>
     <div class="contact-container">
+      <!-- LEFT SIDE (Contact Info) -->
       <div class="contact-info">
         <div class="info-item">
           <i class="fas fa-phone"></i>
@@ -44,6 +45,7 @@
         </div>
       </div>
 
+      <!-- RIGHT SIDE (Form + Messages) -->
       <div class="contact-form">
         <h3>What is your feedback on my website?</h3>
         <form @submit.prevent="submitFeedback">
@@ -52,49 +54,81 @@
             placeholder="Type your message here..." 
             required
           ></textarea>
-          <button type="submit">
-            Send Feedback
-          </button>
+          <button type="submit">Send Feedback</button>
         </form>
-        <p v-if="feedbackSent">
-          Thank you for your feedback!
-        </p>
+        <p v-if="feedbackSent">Thank you for your feedback!</p>
+
+        <!-- NEW: Feedback messages list -->
+        <div class="messages-container" v-if="feedbackList.length">
+          <h3>Messages</h3>
+          <div class="messages-list">
+            <div 
+              v-for="item in feedbackList" 
+              :key="item.id" 
+              class="message-item"
+            >
+              <p class="message-text">{{ item.message }}</p>
+              <small class="message-meta">
+                {{ item.name || "Anonymous" }} • {{ formatDate(item.created_at) }}
+              </small>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 </template>
 
 <script>
-import { supabase } from '../lib/supabaseClient.js';
+import { supabase } from "../lib/supabaseClient.js";
 
 export default {
   name: "Contact",
   data() {
     return {
-      feedbackMessage: '',
-      feedbackSent: false
+      feedbackMessage: "",
+      feedbackSent: false,
+      feedbackList: [],
     };
   },
+  async mounted() {
+    await this.loadFeedback();
+  },
   methods: {
+    async loadFeedback() {
+      const { data, error } = await supabase
+        .from("feedback")
+        .select("*")
+        .order("created_at", { ascending: false }); // newest first
+
+      if (!error) this.feedbackList = data;
+    },
     async submitFeedback() {
       if (!this.feedbackMessage.trim()) return;
 
       const { error } = await supabase
-        .from('feedback') // <-- your table name in Supabase
+        .from("feedback")
         .insert([{ message: this.feedbackMessage }]);
 
       if (error) {
-        console.error('Error submitting feedback:', error.message);
-        alert('There was an error sending your feedback.');
+        console.error("Error submitting feedback:", error.message);
+        alert("There was an error sending your feedback.");
         return;
       }
 
       this.feedbackSent = true;
-      this.feedbackMessage = '';
+      this.feedbackMessage = "";
+      this.loadFeedback(); // refresh list
 
-      // Hide thank you message after 3 seconds
       setTimeout(() => (this.feedbackSent = false), 3000);
-    }
-  }
+    },
+    formatDate(dateStr) {
+      const date = new Date(dateStr);
+      return date.toLocaleString("en-US", {
+        dateStyle: "medium",
+        timeStyle: "short",
+      });
+    },
+  },
 };
 </script>
