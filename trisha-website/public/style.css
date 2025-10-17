@@ -23,14 +23,6 @@ body {
   padding: 40px 20px;
 }
 
-.content-section {
-  min-height: auto; 
-  padding: 80px 40px 120px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
 .nav-link.active {
   color: #a393bf !important; 
   font-weight: bold;
