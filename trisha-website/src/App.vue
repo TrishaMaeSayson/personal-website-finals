@@ -2,16 +2,16 @@
   <div class="container-fluid">
     <div class="row g-0">
       <!-- Sidebar -->
-      <div class="col-md-2">
-        <Sidebar />
-      </div>
+      <Sidebar />
 
       <!-- Main content -->
-      <div class="col-md-10 p-4">
+      <div class="col-md-10 main-content">
         <div class="row">
-          <div class="col-2"></div>
-
-          <div class="col-8">
+          <!-- Desktop: 2 empty cols on each side -->
+          <div class="col-2 d-none d-xl-block"></div>
+          
+          <!-- Content area -->
+          <div class="col-12 col-xl-8">
             <Home />
             <About />
             <Education />
@@ -19,8 +19,8 @@
             <Contact />
             <Resources />
           </div>
-
-          <div class="col-2"></div>
+          
+          <div class="col-2 d-none d-xl-block"></div>
         </div>
       </div>
     </div>

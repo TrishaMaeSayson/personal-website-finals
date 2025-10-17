@@ -2,12 +2,14 @@
   <section id="home" class="content-section active">
     <div class="home-text text-start">
       <h2>Hi, I'm <span class="highlight-name">Trish</span></h2>
-      <p id="typing-text">
-        The only 3 things that you can control are your <br />
-        <span id="thoughts" class="word-thoughts"></span>
-        <span id="feelings" class="word-feelings"></span>
-        <span id="actions" class="word-actions"></span>
-      </p>
+      <div class="typing-container">
+        <p id="typing-text">
+          <span class="static-text">The only 3 things that you can control are your</span>
+          <span class="dynamic-words">
+            <span id="thoughts" class="word-thoughts"></span><span id="feelings" class="word-feelings"></span><span id="actions" class="word-actions"></span>
+          </span>
+        </p>
+      </div>
     </div>
     <div class="photo-frame">
       <div class="photo-background">
@@ -24,14 +26,14 @@
 export default {
   name: "Home",
   mounted() {
-    const text1 = "The only 3 things that you can control are your";
+    const text1 = "The only 3 things that you can control are your ";
     const words = {
-      thoughts: "thoughts,",
-      feelings: " feelings,",
-      actions: " & actions."
+      thoughts: "thoughts, ",
+      feelings: "feelings, ",
+      actions: "& actions."
     };
 
-    const typingText = document.getElementById("typing-text");
+    const staticText = document.querySelector('.static-text');
     const spans = {
       thoughts: document.getElementById("thoughts"),
       feelings: document.getElementById("feelings"),
@@ -43,7 +45,7 @@ export default {
 
     const type = () => {
       if (phase === "line1") {
-        typingText.firstChild.textContent = text1.substring(0, i);
+        staticText.textContent = text1.substring(0, i);
         i++;
         if (i <= text1.length) setTimeout(type, 40);
         else { phase = "thoughts"; i = 0; setTimeout(type, 500); }
@@ -66,7 +68,7 @@ export default {
     };
 
     const restart = () => {
-      typingText.firstChild.textContent = "";
+      staticText.textContent = "";
       spans.thoughts.textContent = "";
       spans.feelings.textContent = "";
       spans.actions.textContent = "";
