@@ -111,13 +111,18 @@ export default {
 
       if (!error) this.feedbackList = data;
     },
+
     async submitFeedback() {
-      if (!this.feedbackMessage.trim()) return;
+      // ✅ Prevent submission if name or message is empty
+      if (!this.feedbackName.trim() || !this.feedbackMessage.trim()) {
+        alert("Please enter both your name and your feedback before submitting.");
+        return;
+      }
 
       const { error } = await supabase
         .from('feedback')
         .insert([
-          { name: this.feedbackName || 'Anonymous', message: this.feedbackMessage },
+          { name: this.feedbackName, message: this.feedbackMessage },
         ]);
 
       if (error) {
@@ -134,6 +139,7 @@ export default {
 
       setTimeout(() => (this.feedbackSent = false), 3000);
     },
+
     formatDate(date) {
       return new Date(date).toLocaleString();
     },
