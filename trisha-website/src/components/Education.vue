@@ -22,14 +22,57 @@
       </div>
 
       <div class="education-photos">
-        <div class="photo-square square1"><img src="/images/matyo.jpg" alt="Matyo" /></div>
-        <div class="photo-square square2"><img src="/images/ceu.jpg" alt="CEU" /></div>
-        <div class="photo-square square3"><img src="/images/apc.jpg" alt="APC" /></div>
+        <div class="photo-square square1 clickable"><img src="/images/matyo.jpg" alt="Matyo" /></div>
+        <div class="photo-square square2 clickable"><img src="/images/ceu.jpg" alt="CEU" /></div>
+        <div class="photo-square square3 clickable"><img src="/images/apc.jpg" alt="APC" /></div>
       </div>
     </div>
   </section>
 </template>
 
 <script>
-export default { name: "Education" };
+export default {
+  name: "Education",
+  mounted() {
+    this.setupImageModal();
+  },
+  methods: {
+    setupImageModal() {
+      // Create modal if it doesn't exist
+      let modal = document.querySelector('.image-modal');
+      if (!modal) {
+        modal = document.createElement('div');
+        modal.className = 'image-modal';
+        modal.innerHTML = `
+          <span class="image-modal-close">&times;</span>
+          <img src="" alt="Enlarged view">
+        `;
+        document.body.appendChild(modal);
+      }
+
+      const modalImg = modal.querySelector('img');
+      const closeBtn = modal.querySelector('.image-modal-close');
+
+      // Add click events to all education photos
+      const photos = document.querySelectorAll('#education .photo-square.clickable img');
+      photos.forEach(photo => {
+        photo.parentElement.style.cursor = 'pointer';
+        photo.addEventListener('click', () => {
+          modalImg.src = photo.src;
+          modal.classList.add('active');
+        });
+      });
+
+      // Close modal
+      modal.addEventListener('click', () => {
+        modal.classList.remove('active');
+      });
+
+      closeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        modal.classList.remove('active');
+      });
+    }
+  }
+};
 </script>

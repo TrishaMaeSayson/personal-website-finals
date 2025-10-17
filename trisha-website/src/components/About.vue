@@ -108,6 +108,47 @@ export default {
     });
 
     resetBars();
+
+    // IMAGE MODAL FUNCTIONALITY (only for drawing image, not logos)
+    this.setupImageModal();
+  },
+  methods: {
+    setupImageModal() {
+      // Create modal if it doesn't exist
+      let modal = document.querySelector('.image-modal');
+      if (!modal) {
+        modal = document.createElement('div');
+        modal.className = 'image-modal';
+        modal.innerHTML = `
+          <span class="image-modal-close">&times;</span>
+          <img src="" alt="Enlarged view">
+        `;
+        document.body.appendChild(modal);
+      }
+
+      const modalImg = modal.querySelector('img');
+      const closeBtn = modal.querySelector('.image-modal-close');
+
+      // Add click event to drawing image only (not logos)
+      const drawingImg = document.querySelector('.music-art .drawing');
+      if (drawingImg) {
+        drawingImg.style.cursor = 'pointer';
+        drawingImg.addEventListener('click', () => {
+          modalImg.src = drawingImg.src;
+          modal.classList.add('active');
+        });
+      }
+
+      // Close modal on click
+      modal.addEventListener('click', () => {
+        modal.classList.remove('active');
+      });
+
+      closeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        modal.classList.remove('active');
+      });
+    }
   }
 };
 </script>

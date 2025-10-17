@@ -76,6 +76,49 @@ export default {
     };
 
     type();
+
+    // IMAGE MODAL FUNCTIONALITY
+    this.setupImageModal();
+  },
+  methods: {
+    setupImageModal() {
+      // Create modal element
+      const modal = document.createElement('div');
+      modal.className = 'image-modal';
+      modal.innerHTML = `
+        <span class="image-modal-close">&times;</span>
+        <img src="" alt="Enlarged view">
+      `;
+      document.body.appendChild(modal);
+
+      const modalImg = modal.querySelector('img');
+      const closeBtn = modal.querySelector('.image-modal-close');
+
+      // Add click event to profile pic
+      const profilePic = document.querySelector('#home .profile-pic');
+      if (profilePic) {
+        profilePic.style.cursor = 'pointer';
+        profilePic.addEventListener('click', () => {
+          modalImg.src = profilePic.src;
+          modal.classList.add('active');
+        });
+      }
+
+      // Close modal on click
+      modal.addEventListener('click', () => {
+        modal.classList.remove('active');
+      });
+
+      closeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        modal.classList.remove('active');
+      });
+    }
+  },
+  beforeUnmount() {
+    // Clean up modal
+    const modal = document.querySelector('.image-modal');
+    if (modal) modal.remove();
   }
 };
 </script>

@@ -13,18 +13,61 @@
       </div>
     </div>
     <div class="achievement-photos">
-      <div class="photo-square"><img src="/images/laude.jpg" alt="Laude" /></div>
-      <div class="photo-square"><img src="/images/Edukcircle.jpg" alt="EdukCircle" /></div>
-      <div class="photo-square"><img src="/images/license.png" alt="License" /></div>
-      <div class="photo-square"><img src="/images/mr.jpg" alt="Market" /></div>
-      <div class="photo-square"><img src="/images/fha.jpg" alt="IMB SG" /></div>
-      <div class="photo-square"><img src="/images/thaifex.jpg" alt="IMB Thai" /></div>
-      <div class="photo-square"><img src="/images/data.png" alt="Data" /></div>
-      <div class="photo-square"><img src="/images/web.png" alt="IBM" /></div>
+      <div class="photo-square clickable"><img src="/images/laude.jpg" alt="Laude" /></div>
+      <div class="photo-square clickable"><img src="/images/Edukcircle.jpg" alt="EdukCircle" /></div>
+      <div class="photo-square clickable"><img src="/images/license.png" alt="License" /></div>
+      <div class="photo-square clickable"><img src="/images/mr.jpg" alt="Market" /></div>
+      <div class="photo-square clickable"><img src="/images/fha.jpg" alt="IMB SG" /></div>
+      <div class="photo-square clickable"><img src="/images/thaifex.jpg" alt="IMB Thai" /></div>
+      <div class="photo-square clickable"><img src="/images/data.png" alt="Data" /></div>
+      <div class="photo-square clickable"><img src="/images/web.png" alt="IBM" /></div>
     </div>
   </section>
 </template>
 
 <script>
-export default { name: "Achievements" };
+export default {
+  name: "Achievements",
+  mounted() {
+    this.setupImageModal();
+  },
+  methods: {
+    setupImageModal() {
+      // Create modal if it doesn't exist
+      let modal = document.querySelector('.image-modal');
+      if (!modal) {
+        modal = document.createElement('div');
+        modal.className = 'image-modal';
+        modal.innerHTML = `
+          <span class="image-modal-close">&times;</span>
+          <img src="" alt="Enlarged view">
+        `;
+        document.body.appendChild(modal);
+      }
+
+      const modalImg = modal.querySelector('img');
+      const closeBtn = modal.querySelector('.image-modal-close');
+
+      // Add click events to all achievement photos
+      const photos = document.querySelectorAll('#achievement .photo-square.clickable img');
+      photos.forEach(photo => {
+        photo.parentElement.style.cursor = 'pointer';
+        photo.addEventListener('click', () => {
+          modalImg.src = photo.src;
+          modal.classList.add('active');
+        });
+      });
+
+      // Close modal
+      modal.addEventListener('click', () => {
+        modal.classList.remove('active');
+      });
+
+      closeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        modal.classList.remove('active');
+      });
+    }
+  }
+};
 </script>
