@@ -107,13 +107,12 @@ export default {
       const { data, error } = await supabase
         .from('feedback')
         .select('*')
-        .order('created_at', { ascending: false }); // latest first
+        .order('created_at', { ascending: false }); 
 
       if (!error) this.feedbackList = data;
     },
 
     async submitFeedback() {
-      // ✅ Prevent submission if name or message is empty
       if (!this.feedbackName.trim() || !this.feedbackMessage.trim()) {
         alert("Please enter both your name and your feedback before submitting.");
         return;
@@ -135,7 +134,7 @@ export default {
       this.feedbackMessage = '';
       this.feedbackName = '';
 
-      await this.loadFeedback(); // refresh messages
+      await this.loadFeedback(); 
 
       setTimeout(() => (this.feedbackSent = false), 3000);
     },
